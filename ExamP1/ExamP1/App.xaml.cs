@@ -67,6 +67,8 @@ namespace ExamP1
             InitializeComponent();
             MoviesDb.Init();
             ProductorasDb.Init();
+
+            MainPage = new NavigationPage(new Inicio());
         }
 
 

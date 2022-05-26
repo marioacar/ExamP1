@@ -13,7 +13,7 @@ namespace ExamP1.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Avatar { get; set; }
-        public string titulo { get; set; }
+        public string Titulo { get; set; }
         public string sinopsis { get; set; }
 
         //public string productora { get; set; }
