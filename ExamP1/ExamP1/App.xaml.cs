@@ -40,17 +40,18 @@ namespace ExamP1
             }
         }
 
+        //DB de Productora
 
-        private static ProductoraRepository _ProductoraDb;
-        public static ProductoraRepository ProductoraDb
+        private static ProductoraRepository _ProductorasDb;
+        public static ProductoraRepository ProductorasDb
         {
             get
             {
-                if (_ProductoraDb == null)
+                if (_ProductorasDb == null)
                 {
-                    _ProductoraDb = new ProductoraRepository();
+                    _ProductorasDb = new ProductoraRepository();
                 }
-                return _ProductoraDb;
+                return _ProductorasDb;
 
             }
         }
@@ -65,7 +66,7 @@ namespace ExamP1
         {
             InitializeComponent();
             MoviesDb.Init();
-            ProductoraDb.Init();
+            ProductorasDb.Init();
         }
 
 

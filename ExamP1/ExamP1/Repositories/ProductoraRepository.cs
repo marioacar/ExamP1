@@ -3,6 +3,7 @@ using SQLite;
 using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -47,6 +48,11 @@ namespace ExamP1.Repositories
 
 
 
+        }
+
+        internal void InsertOrUpdate(ObservableCollection<Productora> productora)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Productora> GetAll()

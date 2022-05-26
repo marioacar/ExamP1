@@ -16,7 +16,7 @@
                    FontSize="Large"
                    Margin="0,0,15,0">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{c}"
+                    <TapGestureRecognizer Command="{Binding cmdAgregarMovie}"/>
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>

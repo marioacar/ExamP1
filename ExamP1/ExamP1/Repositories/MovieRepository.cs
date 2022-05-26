@@ -1,4 +1,4 @@
-﻿
+﻿using ExamP1.Model;
 using SQLite;
 using SQLiteNetExtensions.Extensions;
 using System;
@@ -8,57 +8,58 @@ using System.Linq;
 using System.Text;
 
 
+
 namespace ExamP1.Repositories
 {
     public class MovieRepository
     {
         SQLiteConnection connection;
-        public LibroRepo()
+        public MovieRepository()
         {
             connection = new SQLiteConnection(Constants.Constants.DatabasePath, Constants.Constants.Flags);
-            connection.CreateTable<Libro>();
+            connection.CreateTable<Movie>();
         }
 
         public void Init()
         {
-            connection.CreateTable<Libro>();
+            connection.CreateTable<Movie>();
         }
-        public void InsertOrUpdate(Libro Libro)
+        public void InsertOrUpdate(Movie Movie)
         {
-            if (Libro.Id == 0)
+            if (Movie.Id == 0)
             {
-                Debug.WriteLine($"Id antes de registrar {Libro.Id}");
-                connection.InsertWithChildren(Libro);
-                Debug.WriteLine($"Id despues de registrar {Libro.Id}");
+                Debug.WriteLine($"Id antes de registrar {Movie.Id}");
+                connection.InsertWithChildren(Movie);
+                Debug.WriteLine($"Id despues de registrar {Movie.Id}");
             }
             else
             {
-                Debug.WriteLine($"Id antes de actualizar {Libro.Id}");
-                connection.Update(Libro);
-                App.FechaPublicacionDb.InsertOrUpdate(Libro.FechaPublicacion);
-                Debug.WriteLine($"Id despues de actualizar {Libro.Id}");
+                Debug.WriteLine($"Id antes de actualizar {Movie.Id}");
+                connection.Update(Movie);
+                App.ProductorasDb.InsertOrUpdate(Movie.Productora);
+                Debug.WriteLine($"Id despues de actualizar {Movie.Id}");
             }
         }
 
-        public Libro GetById(int Id)
+        public Movie GetById(int Id)
         {
-            return connection.Table<Libro>().FirstOrDefault(item => item.Id == Id);
+            return connection.Table<Movie>().FirstOrDefault(item => item.Id == Id);
             //return connection.GetAllWithChildren<Contacto>(item => item.Id == Id).FirstOrDefault();
 
 
 
         }
 
-        public List<Libro> GetAll()
+        public List<Movie> GetAll()
         {
 
-            return connection.GetAllWithChildren<Libro>().ToList();
+            return connection.GetAllWithChildren<Movie>().ToList();
         }
 
 
         public void DeleteItem(int Id)
         {
-            Libro contacto = GetById(Id);
+            Movie contacto = GetById(Id);
             connection.Delete(contacto);
         }
     }

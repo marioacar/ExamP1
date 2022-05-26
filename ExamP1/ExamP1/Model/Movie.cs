@@ -12,16 +12,18 @@ namespace ExamP1.Model
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string portada { get; set; }
+        public string Avatar { get; set; }
         public string titulo { get; set; }
         public string sinopsis { get; set; }
 
         //public string productora { get; set; }
         //public string actores { get; set; }
 
+        [ForeignKey(typeof(Productora))]
+        public int FKProductora { get; set; }
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public ObservableCollection<Productora> Productoras { get; set; }
+        public ObservableCollection<Productora> Productora { get; set; }
 
     }
 }

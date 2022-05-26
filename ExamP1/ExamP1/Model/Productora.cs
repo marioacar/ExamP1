@@ -9,13 +9,13 @@ namespace ExamP1.Model
     [Table("Productoras")]
     public class Productora
     {
-        [PrimaryKey,AutoIncrement]
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Portada { get; set; }
         public string Name { get; set; }
 
-        [ForeignKey(typeof(Movie))]
 
+        [ForeignKey(typeof(Movie))]
         public int FKMovie { get; set; }
 
     }
