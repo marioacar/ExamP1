@@ -42,7 +42,6 @@
                         <FormattedString>
                             <Span Text="Productora"/>
                             <Span Text="{x:Static system:Environment.NewLine}"/>
-
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
@@ -74,12 +73,7 @@
                              Grid.ColumnSpan="2"
                              Orientation="Horizontal"
                              HorizontalOptions="End">
-
-                    <Button Text="Productora"
-                            Grid.Row="0"
-                            BackgroundColor="Green"
-                            TextColor="White"
-                            HorizontalOptions="End"/>
+                    
                 </StackLayout>
 
 

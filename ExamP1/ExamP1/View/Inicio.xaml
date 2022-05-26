@@ -50,7 +50,7 @@
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
                                             <Span Text="{Binding Productora.Name}" FontAttributes="Bold"/>
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                                            
+
                                             <!--<Span Text="Autor"/>
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
                                             <Span Text="{Binding Titulo}" FontAttributes="Bold"/>

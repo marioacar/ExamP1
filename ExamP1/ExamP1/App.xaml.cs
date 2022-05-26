@@ -42,16 +42,16 @@ namespace ExamP1
 
         //DB de Productora
 
-        private static ProductoraRepository _ProductorasDb;
+        private static ProductoraRepository _ProductoraDb;
         public static ProductoraRepository ProductorasDb
         {
             get
             {
-                if (_ProductorasDb == null)
+                if (_ProductoraDb == null)
                 {
-                    _ProductorasDb = new ProductoraRepository();
+                    _ProductoraDb = new ProductoraRepository();
                 }
-                return _ProductorasDb;
+                return _ProductoraDb;
 
             }
         }

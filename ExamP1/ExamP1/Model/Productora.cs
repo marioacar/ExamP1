@@ -14,9 +14,5 @@ namespace ExamP1.Model
         public string Avatar { get; set; }
         public string Name { get; set; }
 
-
-        [ForeignKey(typeof(Movie))]
-        public int FKMovie { get; set; }
-
     }
 }

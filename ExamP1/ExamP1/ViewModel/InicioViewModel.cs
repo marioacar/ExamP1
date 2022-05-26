@@ -55,8 +55,10 @@ namespace ExamP1.ViewModel
         {
             Movie movie = new Faker<Movie>()
                  .RuleFor(c => c.Avatar, f => f.Person.Avatar);
-           
-               
+
+            movie.Productora = new Faker<Productora>()
+                .RuleFor(c => c.Name, f => f.Company.CompanyName());
+
             App.Current.MainPage.Navigation.PushAsync(new DetallesGeneral(movie));
         }
 

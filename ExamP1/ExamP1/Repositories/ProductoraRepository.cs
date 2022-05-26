@@ -25,18 +25,18 @@ namespace ExamP1.Repositories
         {
             connection.CreateTable<Productora>();
         }
-        public void InsertOrUpdate(Productora productora)
+        public void InsertOrUpdate(Productora acta)
         {
-            if (productora.Id == 0)
+            if (acta.Id == 0)
             {
 
-                connection.Insert(productora);
+                connection.Insert(acta);
 
             }
             else
             {
 
-                connection.Update(productora);
+                connection.Update(acta);
 
             }
         }
@@ -50,10 +50,10 @@ namespace ExamP1.Repositories
 
         }
 
-        internal void InsertOrUpdate(ObservableCollection<Productora> productora)
-        {
-            throw new NotImplementedException();
-        }
+        //internal void InsertOrUpdate(ObservableCollection<Productora> productora)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public List<Productora> GetAll()
         {
