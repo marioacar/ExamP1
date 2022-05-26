@@ -1,12 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExamP1.View.Inicio">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             xmlns:model="clr-namespace:ExamP1.Model"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             x:Class="ExamP1.View.Inicio"
+             BackgroundColor="LightGray"
+             x:Name="this">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Movies" 
+                   TextColor="White"
+                   HorizontalOptions="FillAndExpand" FontSize="Large"/>
+            <Label Text="X"
+                   TextColor="White"
+                   FontSize="Large"
+                   Margin="0,0,15,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{c}"
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
-    </ContentPage.Content>
+    </NavigationPage.TitleView>
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExamP1.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace ExamP1.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetallesGeneral : ContentPage
     {
-        public DetallesGeneral()
+        public DetallesGeneral(Movie movie)
         {
             InitializeComponent();
+            BindingContext = new DetallesGeneralViewModel(movie);
+
         }
     }
 }

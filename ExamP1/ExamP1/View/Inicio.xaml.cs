@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExamP1.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,19 @@ namespace ExamP1.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Inicio : ContentPage
     {
+
+        InicioViewModel vm = new InicioViewModel();
         public Inicio()
         {
             InitializeComponent();
+            BindingContext = vm;
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            vm.GetAll();
+
         }
     }
 }

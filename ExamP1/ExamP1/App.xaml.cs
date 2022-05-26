@@ -27,7 +27,7 @@ namespace ExamP1
         //DB de peliculas
 
         private static MovieRepository _MovieDb;
-        public static MovieRepository   MovieDb
+        public static MovieRepository   MoviesDb
         {
             get
             {
@@ -64,7 +64,7 @@ namespace ExamP1
         public App()
         {
             InitializeComponent();
-            MovieDb.Init();
+            MoviesDb.Init();
             ProductoraDb.Init();
         }
 
