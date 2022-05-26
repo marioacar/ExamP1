@@ -1,6 +1,8 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace ExamP1.Model
@@ -13,7 +15,13 @@ namespace ExamP1.Model
         public string portada { get; set; }
         public string titulo { get; set; }
         public string sinopsis { get; set; }
-        public DateTime Publicacion { get; set; }
+
+        //public string productora { get; set; }
+        //public string actores { get; set; }
+
+
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public ObservableCollection<Productora> Productoras { get; set; }
 
     }
 }
