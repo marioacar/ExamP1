@@ -28,7 +28,12 @@
                             Margin="5,5">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Movie">
-                        <Grid RowDefinitions="auto,auto" ColumnDefinitions="0">
+                        <Grid RowDefinitions="auto,auto" ColumnDefinitions="120">
+                            <Image Source="{Binding Avatar}"   Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                                   HeightRequest="60" 
+                                   WidthRequest="60" 
+                                   Aspect="AspectFit"
+                                   Margin="5,0,0,0"/>
                             <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
                                 <Label >
                                     <Label.FormattedText>
@@ -42,9 +47,10 @@
                                             <Span Text="{Binding sinopsis}" FontAttributes="Bold"/>
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
                                             <Span Text="Productora"/>
-                                            <!--<Span Text="{x:Static system:Environment.NewLine}"/>
-                                            <Span Text="{Binding Productora}" FontAttributes="Bold"/>
-                                            <Span Text="{x:Static system:Environment.NewLine}"/>-->
+                                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                                            <Span Text="{Binding Productora.Name}" FontAttributes="Bold"/>
+                                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                                            
                                             <!--<Span Text="Autor"/>
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
                                             <Span Text="{Binding Titulo}" FontAttributes="Bold"/>

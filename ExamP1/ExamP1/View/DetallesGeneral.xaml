@@ -13,7 +13,7 @@
                      BindingContext="{Binding BindingContext.Movie , Source={x:Reference this}}"
                      x:DataType="model:Movie">
             <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,*,auto,auto" ColumnDefinitions="auto,*">
-                <!--<Image Source="{Binding Avatar}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>-->
+                <Image Source="{Binding Avatar}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
                 <Label Text="Titulo" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"/>
                 <Entry Text="{Binding Titulo}" Grid.Row="1" Grid.Column="1"/>
                 <Label Grid.Row="1" Grid.Column="0">
@@ -36,11 +36,11 @@
                     </Label.FormattedText>
                 </Label>
 
-                <Entry Text="{Binding Productora}" Grid.Row="3" Grid.Column="1"/>
+                <Entry Text="{Binding Productora.Name}" Grid.Row="3" Grid.Column="1"/>
                 <Label Grid.Row="3" Grid.Column="0">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Descripcion"/>
+                            <Span Text="Productora"/>
                             <Span Text="{x:Static system:Environment.NewLine}"/>
 
                         </FormattedString>
@@ -69,7 +69,18 @@
                 </Label>-->
 
 
+                <StackLayout Grid.Row="5"
+                             Grid.Column="0"
+                             Grid.ColumnSpan="2"
+                             Orientation="Horizontal"
+                             HorizontalOptions="End">
 
+                    <Button Text="Productora"
+                            Grid.Row="0"
+                            BackgroundColor="Green"
+                            TextColor="White"
+                            HorizontalOptions="End"/>
+                </StackLayout>
 
 
                 <StackLayout Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 

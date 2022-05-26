@@ -19,13 +19,28 @@ namespace ExamP1.ViewModel
         public ICommand cmdAgregarMovie { get; set; }
         public ICommand cmdModificarMovie { get; set; }
 
+        public ICommand cmdAgregarProductora { get; set; }
+
         public InicioViewModel()
         {
             Movies = new ObservableCollection<Movie>();
             cmdAgregarMovie = new Command(() => cmdAgregarMovieMetodo());
+            //cmdAgregarProductora = new Command(() => cmdAgregarProductoraMetodo);
             cmdModificarMovie = new Command<Movie>((item) => cmdModificarMovieMetodo(item));
 
         }
+
+
+
+        //private void cmdAgregarProductoraMetodo(Productora productora)
+        //{
+        //    Productora productora = new Faker<Productora>()
+        //        .RuleFor(c => c.Avatar, f => f.Person.Avatar);
+
+
+        //    App.Current.MainPage.Navigation.PushAsync(new DetallesGeneral(productora));
+        //}
+
 
         private void cmdAgregarMovieMetodo(Movie movie)
         {
@@ -38,26 +53,16 @@ namespace ExamP1.ViewModel
 
         private void cmdAgregarMovieMetodo()
         {
-            Movie movie = new Faker<Movie>();
-            //    .RuleFor(c =>c.AvatarS, f => f.Person.Avatar)
-            //    .RuleFor(c =>c.Titulo, f => f.Titulo.FirstName)
-
-            Random rnd = new Random();
-            DateTime datetoday = DateTime.Now;
-
-            int rndYear = rnd.Next(1995, datetoday.Year);
-            int rndMonth = rnd.Next(1, 12);
-            int rndDay = rnd.Next(1, 31);
-
-            DateTime generateDate = new DateTime(rndYear, rndMonth, rndDay);
-
-            Debug.WriteLine($"FECHA ALEATORIA {generateDate}");
-
-
-
-
+            Movie movie = new Faker<Movie>()
+                 .RuleFor(c => c.Avatar, f => f.Person.Avatar);
+           
+               
             App.Current.MainPage.Navigation.PushAsync(new DetallesGeneral(movie));
         }
+
+
+
+
 
         public void GetAll()
 

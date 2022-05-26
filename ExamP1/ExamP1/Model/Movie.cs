@@ -22,8 +22,8 @@ namespace ExamP1.Model
         [ForeignKey(typeof(Productora))]
         public int FKProductora { get; set; }
 
-        [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public ObservableCollection<Productora> Productora { get; set; }
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
+        public Productora Productora { get; set; }
 
     }
 }

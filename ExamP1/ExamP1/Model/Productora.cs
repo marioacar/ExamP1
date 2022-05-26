@@ -11,7 +11,7 @@ namespace ExamP1.Model
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string Portada { get; set; }
+        public string Avatar { get; set; }
         public string Name { get; set; }
 
 
