@@ -15,6 +15,7 @@ namespace ExamP1.Model
         public string Name { get; set; }
         public string Paterno { get; set; }
         public string Materno { get; set; }
+        public string Alias { get; set; }
 
         [ForeignKey(typeof(Movie))]
 
