@@ -25,5 +25,7 @@ namespace ExamP1.Model
         [OneToOne(CascadeOperations = CascadeOperation.All)]
         public Productora Productora { get; set; }
 
+        [ManyToMany(typeof(MovieActor), CascadeOperations = CascadeOperation.All)]
+        public ObservableCollection<Actor> Actors { get; set; }
     }
 }

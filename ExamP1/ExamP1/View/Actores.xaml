@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:ExamP1.Model"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:vm="clr-namespace:ExamP1.ViewModel"
+             x:DataType="vm:BaseViewModel"
+             x:Class="ExamP1.View.Actores">
+   
+</ContentPage>

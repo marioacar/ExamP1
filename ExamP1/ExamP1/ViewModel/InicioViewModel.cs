@@ -18,8 +18,13 @@ namespace ExamP1.ViewModel
 
         public ICommand cmdAgregarMovie { get; set; }
         public ICommand cmdModificarMovie { get; set; }
-
         public ICommand cmdAgregarProductora { get; set; }
+        public ICommand cmdModificarMovieActor { get; set; }
+        //public ICommand cmdVerMovieActor { get; set; }
+
+
+
+
 
         public InicioViewModel()
         {
@@ -27,6 +32,8 @@ namespace ExamP1.ViewModel
             cmdAgregarMovie = new Command(() => cmdAgregarMovieMetodo());
             //cmdAgregarProductora = new Command(() => cmdAgregarProductoraMetodo);
             cmdModificarMovie = new Command<Movie>((item) => cmdModificarMovieMetodo(item));
+            cmdModificarMovieActor = new Command<Movie>((item) => cmdModificarMovieActorMetodo(item));
+            //cmdVerMovieActor = new Command<Movie>((item) => cmdVerMovieActorMetodo(item));
 
         }
 
@@ -41,6 +48,10 @@ namespace ExamP1.ViewModel
         //    App.Current.MainPage.Navigation.PushAsync(new DetallesGeneral(productora));
         //}
 
+        //private void cmdVerMovieActorMetodo(Movie movie)
+        //{
+        //    App.Current.MainPage.Navigation.PushAsync(new Actores(movie));
+        //}
 
         private void cmdAgregarMovieMetodo(Movie movie)
         {
@@ -51,6 +62,11 @@ namespace ExamP1.ViewModel
             App.Current.MainPage.Navigation.PushAsync(new DetallesGeneral(movie));
         }
 
+        private void cmdModificarMovieActorMetodo(Movie movie)
+        {
+            App.Current.MainPage.Navigation.PushAsync(new DetallesActor(movie));
+        }
+
         private void cmdAgregarMovieMetodo()
         {
             Movie movie = new Faker<Movie>()
@@ -59,13 +75,17 @@ namespace ExamP1.ViewModel
             movie.Productora = new Faker<Productora>()
                 .RuleFor(c => c.Name, f => f.Company.CompanyName());
 
+            movie.Productora = new Faker<Productora>()
+               .RuleFor(c => c.Avatar, f => f.Person.Avatar);
+
+
             App.Current.MainPage.Navigation.PushAsync(new DetallesGeneral(movie));
         }
 
 
 
 
-
+        
         public void GetAll()
 
         {
@@ -81,6 +101,9 @@ namespace ExamP1.ViewModel
             }
             OnPropertyChanged();
         }
+
+
+
 
 
     }

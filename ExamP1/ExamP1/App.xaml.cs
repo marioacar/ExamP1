@@ -9,18 +9,18 @@ namespace ExamP1
     public partial class App : Application
     {
         #region Repositories
-        //private static ActorRepository _ActorDb;
-        //public static ActorRepository ActorDb
-        //{
-        //    get
-        //    {
-        //        if (_ActorDb == null)
-        //        {
-        //            _ActorDb = new ActorRepository();
-        //        }
-        //        return _ActorDb;
-        //    }
-        //}
+        private static ActorRepository _ActorDb;
+        public static ActorRepository ActorsDb
+        {
+            get
+            {
+                if (_ActorDb == null)
+                {
+                    _ActorDb = new ActorRepository();
+                }
+                return _ActorDb;
+            }
+        }
 
 
 
@@ -56,17 +56,35 @@ namespace ExamP1
             }
         }
 
+        //DB de Productora
+
+        private static MoviesActorsRepository _MoviesActorDb;
+        public static MoviesActorsRepository MoviesActorsDb
+        {
+            get
+            {
+                if (_MoviesActorDb == null)
+                {
+                    _MoviesActorDb = new MoviesActorsRepository();
+                }
+                return _MoviesActorDb;
+
+            }
+        }
+
 
 
 
         #endregion
 
-        
+
         public App()
         {
             InitializeComponent();
             MoviesDb.Init();
             ProductorasDb.Init();
+            ActorsDb.Init();
+            MoviesActorsDb.Init();
 
             MainPage = new NavigationPage(new Inicio());
         }

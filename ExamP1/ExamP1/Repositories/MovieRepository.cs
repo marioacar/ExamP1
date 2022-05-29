@@ -57,10 +57,10 @@ namespace ExamP1.Repositories
         }
 
 
-        public void DeleteItem(int Id)
-        {
-            Movie contacto = GetById(Id);
-            connection.Delete(contacto);
-        }
+        //public void DeleteItem(int Id)
+        //{
+        //    Movie contacto = GetById(Id);
+        //    connection.Delete(contacto);
+        //}
     }
 }
