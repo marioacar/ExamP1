@@ -27,5 +27,10 @@ namespace ExamP1.View
             vm.GetAll();
 
         }
+
+        public void ActorsPage(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new todosActores());
+        }
     }
 }

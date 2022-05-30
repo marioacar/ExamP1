@@ -100,8 +100,7 @@
                         BackgroundColor="Orange" 
                         TextColor="Black" 
                         HorizontalOptions="End"
-                        Command="{Binding BindingContext.cmd , Source={x:Reference this}}"
-                        CommandParameter="{Binding .}"
+                        Clicked="ActorsPage"
                                    Grid.Column="0"
                     Grid.Row="1"/>
         </Grid>

@@ -34,8 +34,8 @@ namespace ExamP1.Repositories
             else
             {
                 Debug.WriteLine($"Id antes de actualizar {MoviesActors.Id}");
-                //connection.Update(MoviesActors);
-                //App.ProductorasDb.InsertOrUpdate(Movie.Productora);
+                connection.Update(MoviesActors);
+                //App.ActorsDb.InsertOrUpdate(MovieActor.Actor);
                 //Debug.WriteLine($"Id despues de actualizar {Movie.Id}");
             }
         }

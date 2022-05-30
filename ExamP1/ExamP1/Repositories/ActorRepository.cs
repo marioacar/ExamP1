@@ -2,6 +2,7 @@
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace ExamP1.Repositories
@@ -49,15 +50,15 @@ namespace ExamP1.Repositories
         {
             if (acta.Id == 0)
             {
-
+                Debug.WriteLine($"Id antes de registrar {acta.Id}");
                 connection.Insert(acta);
-
+                Debug.WriteLine($"Id despues de registrar {acta.Id}");
             }
             else
             {
-
+                Debug.WriteLine($"Id antes de actualizar {acta.Id}");
                 connection.Update(acta);
-
+                Debug.WriteLine($"Id despues de actualizar {acta.Id}");
             }
         }
 
