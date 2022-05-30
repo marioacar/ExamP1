@@ -16,59 +16,6 @@
                      BindingContext="{Binding BindingContext.Movie , Source={x:Reference this}}"
                      x:DataType="model:Movie">
             <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,*,auto,auto" ColumnDefinitions="auto,*">
-                <Image Source="{Binding Avatar}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-                <Label Text="Titulo" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Label Text="{Binding Titulo}" Grid.Row="1" Grid.Column="1"/>
-                <Label Grid.Row="1" Grid.Column="0">
-                    <Label.FormattedText>
-                        <FormattedString>
-
-                            <Span Text="{x:Static system:Environment.NewLine}"/>
-
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-                <Label Text="{Binding sinopsis}" Grid.Row="2" Grid.Column="1"/>
-                <Label Grid.Row="2" Grid.Column="0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Sinopsis"/>
-                            <Span Text="{x:Static system:Environment.NewLine}"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-                <Label Text="{Binding Productora.Name}" Grid.Row="3" Grid.Column="1"/>
-                <Label Grid.Row="3" Grid.Column="0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Productora"/>
-                            <Span Text="{x:Static system:Environment.NewLine}"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-                <Entry Text="{Binding Actors.Name}" Grid.Row="4" Grid.Column="1"/>
-                <Label Grid.Row="4" Grid.Column="0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Actor"/>
-                            <Span Text="{x:Static system:Environment.NewLine}"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-
-                <Entry Text="{Binding Actors.Alias}" Grid.Row="5" Grid.Column="1"/>
-                <Label Grid.Row="5" Grid.Column="0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Alias"/>
-                            <Span Text="{x:Static system:Environment.NewLine}"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
 
 
 
@@ -76,29 +23,66 @@
 
 
 
-
-
-                <StackLayout Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                <StackLayout Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
                          VerticalOptions="EndAndExpand" HorizontalOptions="End">
+
+
                     <Button Text="Nuevo Actor" 
                         BackgroundColor="Orange" 
-                        TextColor="White"
-                        Grid.Row="6"
+                        TextColor="White" 
                         HorizontalOptions="End"
-                        Command="{Binding BindingContext.cmdGrabaMovie , Source={x:Reference this}}"
+                        Command="{Binding BindingContext.cmdAgregaActor , Source={x:Reference this}}"
                         CommandParameter="{Binding .}"/>
-                    
-                    <!--<Button Text="GRABAR" 
+                    <Button Text="GRABAR" 
                         BackgroundColor="Green" 
                         TextColor="White" 
                         HorizontalOptions="End"
-                        Command="{Binding BindingContext.cmdGrabaMovie , Source={x:Reference this}}"
-                        CommandParameter="{Binding .}"/>-->
+                        Command="{Binding BindingContext.cmdGrabaMovieActor , Source={x:Reference this}}"
+                        CommandParameter="{Binding .}"/>
+
+
                 </StackLayout>
             </Grid>
 
 
+
+            <CollectionView ItemsSource="{Binding Actors}" 
+                            BackgroundColor="White"
+                            Margin="5,5"
+                            >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Actor">
+                        <Grid RowDefinitions="80,auto" ColumnDefinitions="auto"  BackgroundColor="WhiteSmoke">
+                            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                                <Label HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Grid.Row="0" Grid.Column="0"  Text="Actor " FontAttributes="Bold"/>
+                                            <Span Grid.Row="0" Grid.Column="0"  Text="{Binding Name}"/>
+                                            <Span Grid.Row="0" Grid.Column="0" Text="&#10;Alias: " FontAttributes="Bold"/>
+                                            <Span Grid.Row="0" Grid.Column="0" Text="{Binding Alias}" FontSize="Small"  FontAttributes="Italic"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+
+                                </Label>
+
+
+
+                            </StackLayout>
+
+                            <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="1" Color="LightGray"/>
+
+                        </Grid>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
         </StackLayout>
+       
+                 
+                       
     </ContentPage.Content>
 
 </ContentPage>

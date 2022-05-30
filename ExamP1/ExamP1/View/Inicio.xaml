@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:ExamP1.Model"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
-             x:Class="ExamP1.View.Inicio"
+            
              BackgroundColor="LightGray"
+              x:Class="ExamP1.View.Inicio"
              x:Name="this">
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
@@ -39,7 +40,7 @@
                             <!--Pelicula-->
 
                             <!--Productora-->
-                            <Label Text="logo" Grid.Row="1" Grid.Column="0"  HorizontalTextAlignment="Center" />
+                            <Label Text="Productora" Grid.Row="1" Grid.Column="0"  HorizontalTextAlignment="Center" />
                             <Image Source="{Binding Productora.Avatar}"   Grid.Row="2" Grid.RowSpan="1" Grid.Column="0"
                                    HeightRequest="30" 
                                    WidthRequest="10" 

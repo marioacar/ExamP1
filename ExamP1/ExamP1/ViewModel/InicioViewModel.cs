@@ -39,19 +39,8 @@ namespace ExamP1.ViewModel
 
 
 
-        //private void cmdAgregarProductoraMetodo(Productora productora)
-        //{
-        //    Productora productora = new Faker<Productora>()
-        //        .RuleFor(c => c.Avatar, f => f.Person.Avatar);
+        
 
-
-        //    App.Current.MainPage.Navigation.PushAsync(new DetallesGeneral(productora));
-        //}
-
-        //private void cmdVerMovieActorMetodo(Movie movie)
-        //{
-        //    App.Current.MainPage.Navigation.PushAsync(new Actores(movie));
-        //}
 
         private void cmdAgregarMovieMetodo(Movie movie)
         {

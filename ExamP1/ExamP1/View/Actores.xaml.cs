@@ -19,5 +19,15 @@ namespace ExamP1.View
             InitializeComponent();
 
         }
+
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+
+        }
+
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
+        }
     }
 }

@@ -46,11 +46,13 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-               
+
 
                
 
-             
+
+
+
 
 
                 <StackLayout Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
@@ -64,7 +66,9 @@
                         CommandParameter="{Binding .}"/>
                 </StackLayout>
             </Grid>
-
+            
+            
+            
 
         </StackLayout>
     </ContentPage.Content>

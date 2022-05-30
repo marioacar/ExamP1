@@ -25,22 +25,23 @@ namespace ExamP1.Repositories
         {
             connection.CreateTable<Actor>();
 
-            AgregarDesdeInicio("a");
-            AgregarDesdeInicio("b");
-            AgregarDesdeInicio("c");
-            AgregarDesdeInicio("d");
-            AgregarDesdeInicio("e");
+            AgregarDesdeInicio("Mario", "carvantes");
+            AgregarDesdeInicio("AXL", "Bell");
+            AgregarDesdeInicio("Sewer", "Jvnko");
+            AgregarDesdeInicio("Wiz", "wiz");
+            AgregarDesdeInicio("Walter", "white");
+            AgregarDesdeInicio("Francisco", "Rojas");
         }
 
 
 
-        private void AgregarDesdeInicio(string Name)
+        private void AgregarDesdeInicio(string name, string alias)
         {
-            Actor actor = GetByNombre(Name);
+            Actor actor = GetByNombre(name);
 
             if (actor == null)
             {
-                InsertOrUpdate(new Actor() { Name = Name });
+                InsertOrUpdate(new Actor() { Name = name, Alias = alias });
             }
         }
 

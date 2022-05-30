@@ -20,6 +20,7 @@ namespace ExamP1.ViewModel
 
 
         public ICommand cmdAgregaActor { get; set; }
+        public ICommand cmdGrabaMovieActor { get; set; }
 
 
         public DetallesActorViewModel(Movie movie)
@@ -36,7 +37,14 @@ namespace ExamP1.ViewModel
             }
 
             cmdAgregaActor = new Command(() => cmdAgregaActorMetodo());
+            cmdGrabaMovieActor = new Command<Movie>((item) => cmdGrabaMovieActorMetodo(item));
 
+        }
+
+        private void cmdGrabaMovieActorMetodo(Movie movie)
+        {
+            App.MoviesDb.InsertOrUpdate(movie);
+            App.Current.MainPage.Navigation.PopAsync();
         }
 
         private void cmdAgregaActorMetodo()
