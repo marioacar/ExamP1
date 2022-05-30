@@ -27,14 +27,14 @@ namespace ExamP1.Repositories
         {
             if (MoviesActors.Id == 0)
             {
-                Debug.WriteLine($"Id antes de registrar {MoviesActors.Id}");
+                Debug.WriteLine($" de registrar {MoviesActors.Id}");
                 connection.InsertWithChildren(MoviesActors);
                 Debug.WriteLine($"Id despues de registrar {MoviesActors.Id}");
             }
             else
             {
-                Debug.WriteLine($"Id antes de actualizar {MoviesActors.Id}");
-                connection.Update(MoviesActors);
+                Debug.WriteLine($" de actualizar {MoviesActors.Id}");
+                //connection.Update(MoviesActors);
                 //App.ActorsDb.InsertOrUpdate(MovieActor.Actor);
                 //Debug.WriteLine($"Id despues de actualizar {Movie.Id}");
             }

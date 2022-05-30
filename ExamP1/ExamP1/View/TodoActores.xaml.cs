@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ExamP1.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class todosActores : ContentPage
+    public partial class Todos_los_actores : ContentPage
     {
-        public todosActores()
+        public Todos_los_actores()
         {
             InitializeComponent();
         }

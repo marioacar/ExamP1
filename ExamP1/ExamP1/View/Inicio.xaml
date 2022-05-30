@@ -100,7 +100,7 @@
                         BackgroundColor="Orange" 
                         TextColor="Black" 
                         HorizontalOptions="End"
-                        Clicked="ActorsPage"
+                        
                                    Grid.Column="0"
                     Grid.Row="1"/>
         </Grid>

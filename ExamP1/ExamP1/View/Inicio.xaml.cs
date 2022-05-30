@@ -28,9 +28,9 @@ namespace ExamP1.View
 
         }
 
-        public void ActorsPage(object obj, EventArgs args)
-        {
-            Navigation.PushAsync(new todosActores());
-        }
+        //public void ActorsPage(object obj, EventArgs args)
+        //{
+        //    Navigation.PushAsync(new TodoActores());
+        //}
     }
 }
